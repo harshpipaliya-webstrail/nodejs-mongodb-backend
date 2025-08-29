@@ -93,7 +93,7 @@ export const signup = {
 
             } else if (alreadyExist.email === req.body.email) {
                 res.status(httpStatus.OK)
-                    .send({ message: "email is already exist" });
+                    .send({ message: "email already exist" });
             } else {
                 return res.status(httpStatus.INTERNAL_SERVER_ERROR).json(new APIResponse({}, 'Error Adding User', httpStatus.INTERNAL_SERVER_ERROR, e));
             }
@@ -102,7 +102,7 @@ export const signup = {
             if (e.code === 11000) {
                 return res
                     .status(httpStatus.OK)
-                    .send({ message: "user is already exist" });
+                    .send({ message: "user already exist" });
             } else {
                 return res.status(httpStatus.INTERNAL_SERVER_ERROR).json(new APIResponse({}, 'Error Adding User', httpStatus.INTERNAL_SERVER_ERROR, e));
             }
